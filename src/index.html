@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form>
+            <h1>Рассчитайте стоимость автомобиля в лизинг</h1>
+            <div class="form-wrapper">
+                <div class="parameter-block">
+                    <div class="parameter-input-wrapper">
+                        <h2 class="parameter-input-wrapper-header">Стоимость автомобиля</h2>
+                        <div class="parameter-input-block">
+                            <p class="parameter-input-block-cost">3 300 000</p>
+                            <p class="parameter-input-block-rubicon">&#x20bd</p>
+                            <input class="parameter-input-block-range" type="range" value="0" min="0" max="6000000">
+                        </div>
+                    </div>
+                    <div class="parameter-input-wrapper">
+                        <h2 class="parameter-input-wrapper-header">Первоначальный взнос</h2>
+                        <div class="parameter-input-block">
+                            <p class="parameter-input-block-contribution">420 000 ₽</p>
+                            <input class="parameter-input-block-range" type="range" value="0" min="10" max="60">
+                        </div>
+                    </div>
+                    <div class="parameter-input-wrapper">
+                        <h2 class="parameter-input-wrapper-header">Срок лизинга</h2>
+                        <div class="parameter-input-block">
+                            <p class="parameter-input-block-period">60</p>
+                            <p>мес.</p>
+                            <input class="parameter-input-block-range" type="range" value="0" min="1" max="60">
+                        </div>
+                    </div>
+                </div>
+                <div class="data-and-send-block">
+                    <div class="data-and-send-result-wrapper">
+                        <h2 class="data-and-send-result-wrapper-header">Сумма договора лизинга</h2>
+                        <p class="data-and-send-result-text">4 467 313 ₽</p>
+                    </div>
+                    <div class="data-and-send-result-wrapper">
+                        <h2 class="data-and-send-result-wrapper-header">Ежемесячный платеж</h2>
+                        <p class="data-and-send-result-text">114 455 ₽</p>
+                    </div>
+                    <button class="submit-button" type="submit">
+                        Оставить заявку
+                    </button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <script src="js/main.min.js"></script>
+</body>
+</html>
