@@ -10,6 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const htmlmin = require('gulp-htmlmin');
 const browsersync = require('browser-sync');
+const webpack = require('webpack-stream');
 
 const paths = {
     html: {
@@ -77,6 +78,38 @@ gulp.task('scripts', () => {
         .on('end', browsersync.reload)
 });
 
+gulp.task("build-js", () => {
+    return gulp.src("./src/scripts/main.js")
+                .pipe(webpack({
+                    mode: 'development',
+                    output: {
+                        filename: 'script.js'
+                    },
+                    watch: false,
+                    devtool: "source-map",
+                    module: {
+                        rules: [
+                          {
+                            test: /\.m?js$/,
+                            exclude: /(node_modules|bower_components)/,
+                            use: {
+                              loader: 'babel-loader',
+                              options: {
+                                presets: [['@babel/preset-env', {
+                                    debug: true,
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                }))
+                .pipe(gulp.dest(paths.scripts.dest))
+                .on("end", browsersync.reload);
+});
+
 gulp.task('watch', () => {
     browsersync.init({
         server: {
@@ -90,12 +123,12 @@ gulp.task('watch', () => {
     })
 
     gulp.watch(paths.styles.src, gulp.parallel('styles'));
-    gulp.watch(paths.scripts.src, gulp.parallel('scripts'));
+    gulp.watch(paths.scripts.src, gulp.parallel('build-js'));
     gulp.watch(paths.html.src, gulp.parallel('htmlCompress'));
     gulp.watch(paths.fonts.src, gulp.parallel('copy-fonts'));
 });
 
-const build = gulp.series('cleanFolder', 'htmlCompress', gulp.parallel('styles', 'scripts', 'copy-fonts'), 'watch');
+const build = gulp.series('cleanFolder', 'htmlCompress', gulp.parallel('styles', 'build-js', 'copy-fonts'), 'watch');
 
 exports.build = build;
 exports.default = build;

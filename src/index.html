@@ -16,24 +16,27 @@
                     <div class="parameter-input-wrapper">
                         <h2 class="parameter-input-wrapper-header">Стоимость автомобиля</h2>
                         <div class="parameter-input-block">
-                            <p class="parameter-input-block-cost">3 300 000</p>
+                            <input type="number" id="costvalue" class="parameter-input-block-cost" value="1000000"></input>
                             <p class="parameter-input-block-rubicon">&#x20bd</p>
-                            <input class="parameter-input-block-range" type="range" value="0" min="0" max="6000000">
+                            <input id="cost-input-range" class="parameter-input-block-range" type="range" value="1000000" min="1000000" max="6000000">
                         </div>
                     </div>
                     <div class="parameter-input-wrapper">
                         <h2 class="parameter-input-wrapper-header">Первоначальный взнос</h2>
                         <div class="parameter-input-block">
-                            <p class="parameter-input-block-contribution">420 000 ₽</p>
+                            <input type="number" class="parameter-input-block-contribution"></input>
+                            <div class="parameter-input-block-contribution-percentage">
+                                13%
+                            </div>
                             <input class="parameter-input-block-range" type="range" value="0" min="10" max="60">
                         </div>
                     </div>
                     <div class="parameter-input-wrapper">
                         <h2 class="parameter-input-wrapper-header">Срок лизинга</h2>
                         <div class="parameter-input-block">
-                            <p class="parameter-input-block-period">60</p>
+                            <input id="months" type="number" value="1" min="1" max="60" class="parameter-input-block-period" required></input>
                             <p>мес.</p>
-                            <input class="parameter-input-block-range" type="range" value="0" min="1" max="60">
+                            <input id="month-input-range" class="parameter-input-block-range" type="range" value="1" min="1" max="60">
                         </div>
                     </div>
                 </div>
@@ -53,6 +56,6 @@
             </div>
         </form>
     </section>
-    <script src="js/main.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
