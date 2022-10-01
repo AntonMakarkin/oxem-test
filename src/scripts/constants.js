@@ -1,1 +1,0 @@
-export const percentage = 0.035;

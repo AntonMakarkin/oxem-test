@@ -1,4 +1,4 @@
-import calc from './calc';
+import calc from './modules/calc';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
