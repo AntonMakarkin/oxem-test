@@ -24,11 +24,12 @@
                     <div class="parameter-input-wrapper">
                         <h2 class="parameter-input-wrapper-header">Первоначальный взнос</h2>
                         <div class="parameter-input-block">
-                            <input type="number" class="parameter-input-block-contribution"></input>
+                            <input type="number" id="contribution" value="100000" class="parameter-input-block-contribution"></input>
+                            <p class="parameter-input-block-rubicon">&#x20bd</p>
                             <div class="parameter-input-block-contribution-percentage">
-                                13%
+                                10%
                             </div>
-                            <input class="parameter-input-block-range" type="range" value="0" min="10" max="60">
+                            <input id="contribution-range-input" class="parameter-input-block-range" type="range" value="10" min="10" max="60">
                         </div>
                     </div>
                     <div class="parameter-input-wrapper">
@@ -43,11 +44,17 @@
                 <div class="data-and-send-block">
                     <div class="data-and-send-result-wrapper">
                         <h2 class="data-and-send-result-wrapper-header">Сумма договора лизинга</h2>
-                        <p class="data-and-send-result-text">4 467 313 ₽</p>
+                        <div class="data-and-send-result-text-block">
+                            <p id="totalammount-text" class="data-and-send-result-text">114 455</p>
+                            <p class="data-and-send-result-text data-and-send-result-rubicon">&#x20bd</p>
+                        </div>
                     </div>
                     <div class="data-and-send-result-wrapper">
                         <h2 class="data-and-send-result-wrapper-header">Ежемесячный платеж</h2>
-                        <p class="data-and-send-result-text">114 455 ₽</p>
+                        <div class="data-and-send-result-text-block">
+                            <p id="monthpay-text" class="data-and-send-result-text">114 455</p>
+                            <p class="data-and-send-result-text data-and-send-result-rubicon">&#x20bd</p>
+                        </div>
                     </div>
                     <button class="submit-button" type="submit">
                         Оставить заявку
