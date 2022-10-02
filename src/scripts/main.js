@@ -7,5 +7,5 @@ window.addEventListener('DOMContentLoaded', () => {
     
     calc();
     form();
-    //modal('.modalWindow', '.overlay');
+    modal('.modalWindow', '.overlay');
 });

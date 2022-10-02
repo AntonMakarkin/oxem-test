@@ -6,6 +6,12 @@ const modal = (modalSelector, overlaySelector) => {
     overlay.addEventListener('click', () => {
         overlay.style.display = 'none';
     });
+
+    modalWindow.addEventListener('click', (e) => {
+        if (e.target.classList.contains('.closeModal')) {
+            overlay.style.display = 'none';
+        }
+    })
 }
 
 export default modal;
