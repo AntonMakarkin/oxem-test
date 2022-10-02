@@ -34,6 +34,15 @@ h1 {
     max-width: 750px;
     margin: 0;
     margin-bottom: 32px;
+
+    @media (max-width: @laptop) {
+        margin-bottom: 44px;
+    }
+
+    @media (max-width: @smartphone) {
+        margin-bottom: 32px;
+        font-size: 34px;
+    }
 }
 
 h2 {
@@ -48,38 +57,6 @@ h2 {
 p {
     margin: 0;
 }
-
-
-/*input[type="range"]::-webkit-slider-runnable-track {
-    background: @range-bg-color;
-    height: 2px;
-  }
-  
-  /******** Firefox ********/
-//input[type="range"]::-moz-range-track {
-    //background: @range-bg-color;
-    //height: 2px;
-  //}
-
-/***** Thumb Styles *****/
-/***** Chrome, Safari, Opera, and Edge Chromium *****/
-//input[type="range"]::-webkit-slider-thumb {
-    //-webkit-appearance: none; /* Override default look */
-    //appearance: none;
-    //margin-top: -7px; /* Centers thumb on the track */
-    //background: @passive-button-color;
-    //height: 16px;
-    //width: 16px;
-    //border-radius: 50%    
-//}
-
-//input[type="range"]::-moz-range-thumb {
-    //border: none; /*Removes extra border that FF applies*/
-    //border-radius: 50%; /*Removes default border-radius that FF applies*/
-   // background: @passive-button-color;
-//height: 16px;
-  //  width: 16px;
-//}
 
 input[type="range"] {
     -webkit-appearance: none;
@@ -127,10 +104,28 @@ input[type="range"]::-moz-range-thumb {
     -moz-appearance: textfield;
   }
 
-section {
+.section {
     padding-top: 213px;
     padding-left: 47px;
     padding-right: 47px;
+
+    @media (max-width: @laptop) {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+
+    @media (max-width: @tablet) {
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-bottom: 156px;
+    }
+
+    @media (max-width: @smartphone) {
+        padding-top: 44px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 64px;
+    }
 }
 
 .form-wrapper {
@@ -143,14 +138,28 @@ section {
     display: flex;
     justify-content: space-between;
     margin-bottom: 51px;
+
+    @media (max-width: @laptop) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .parameter-input-wrapper {
     width: 32%;
+
+    @media (max-width: @laptop) {
+        width: 100%;
+    }
 }
 
 .parameter-input-wrapper-header {
     margin-bottom: 24px;
+
+    @media (max-width: @smartphone) {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
 }
 
 .parameter-input-block {
@@ -161,6 +170,16 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 2px solid transparent;
+
+    @media (max-width: @laptop) {
+        margin-bottom: 32px;
+    }
+
+    @media (max-width: @smartphone) {
+        margin-bottom: 16px;
+        height: 60px;
+    }
     //padding: 16px 24px
 }
 
@@ -180,6 +199,11 @@ section {
     &:focus {
         outline: none;
     }
+
+    @media (max-width: @smartphone) {
+        font-size: 22px;
+        color: @mobile-font-color;
+    }
 }
 
 .parameter-input-block > p {
@@ -192,6 +216,10 @@ section {
     line-height: 36px;
     color: @h2-color;
     padding: 16px 24px;
+    @media (max-width: @smartphone) {
+        font-size: 22px;
+        color: @mobile-font-color;
+    }
 }
 
 .parameter-input-block-rubicon {
@@ -216,11 +244,16 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: @smartphone) {
+        width: 67px;
+        height: 48px;
+    }
 }
 
 .parameter-input-block-range {
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -233,33 +266,70 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: @laptop) {
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: @smartphone) {
+        align-items: center;
+        justify-content: space-around;
+    }
 }
 
 .data-and-send-result-wrapper {
-    width: 32%
+    width: 32%;
+
+    @media (max-width: @laptop) {
+        width: 50%;
+        margin-bottom: 44px;
+    }
+
+    @media (max-width: @smartphone) {
+        width: 100%;
+        margin-bottom: 29px;
+    }
 }
 
 .data-and-send-result-wrapper-header {
     margin-bottom: 8px;
+
+    @media (max-width: @smartphone) {
+        font-size: 14px;
+    }
 }
 
 .data-and-send-result-text-block {
     display: flex;
+
+    @media (max-width: @smartphone) {
+        font-size: 22px;
+    }
 }
 
 .data-and-send-result-text {
     font-family: 'Nekst';
     font-weight: 900;
     font-size: 54px;
-    color: @h2-color;
+    color: @h2-color-results;
     font-feature-settings: "lnum";
     margin-right: 12px;
 }
 
+.data-and-send-result-text-block > p {
+    @media (max-width: @smartphone) {
+        color: @mobile-font-color;
+        font-size: 22px;
+    }
+}
+
 .data-and-send-result-rubicon {
     position: relative;
-    bottom: 5px
-    //padding-bottom: 5px
+    bottom: 5px;
+
+    @media (max-width: @smartphone) {
+        bottom: 2px;
+    }
 }
 
 .submit-button {
@@ -272,4 +342,47 @@ section {
     font-size: 30px;
     line-height: 36px;
     color: @button-text-color;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: @hover-button-color;
+    }
+
+    &:active {
+        background-color: @pressed-button-color;
+    }
+
+    @media (max-width: @laptop) {
+        width: 345px;
+    }
+
+    @media (max-width: @smartphone) {
+        width: 280px;
+        height: 60px;
+        font-size: 22px;
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalWindow {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    z-index: 3;
+    border-radius: 10px;
 }
